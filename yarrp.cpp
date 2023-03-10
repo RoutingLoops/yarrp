@@ -66,7 +66,7 @@ loop(YarrpConfig * config, TYPE * iplist, Traceroute * trace,
         }
         /* TTL control enforcement */
         ttl += config->minttl;
-        if (ttl > config->maxttl) {
+        if (ttl > config->maxttl || ttl < config->minttl) {
             continue;
         }
         /* Running w/ a biased TTL probability distribution */
